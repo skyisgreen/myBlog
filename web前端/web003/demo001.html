@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实验三</title>
+    <style type="text/css">
+    body>*{
+        width: 95%; height: auto;margin: 0 auto ;
+        margin-top: 10px; border: 1px solid#000; padding: 5px;
+    }
+    header{
+        height: 50px;
+    }
+    section{
+        height: 300px;
+    }
+    footer{
+        height: 30px;
+    }
+    section>*{
+        height: 100; border: 1px solid#000; float: left;
+    }
+    aside{
+        width: 25.510204%;
+    }
+    article{
+        width: 71.428571%; margin-left: 1.020408%
+    }
+
+    #myDIV{
+        width: 100px;
+        height: 100px;
+        background: pink ;
+        -webkit-transform: width 2s;
+        transform: width 2s;
+    }
+    #myDIV:hover{
+        width:300px;
+        height: 300px;
+
+    }
+    
+    </style>
+   
+</head>
+<body>
+    <header>header</header>
+    <nav>nav</nav>
+    <section>
+        <aside>aside</aside>
+        <article>article</article>
+    </section>
+    <footer>footer</footer>
+    <p>查看过渡效果</p>
+    <div id ="myDIV"></div>
+    <script>
+        var dom =document.getElementById("myDIV");
+        dom.addEventListener("webkitTransitionEnd",myFunction);
+
+        dom.addEventListener("transitionend",myFunction);
+        function myFunction()
+        {
+            this.innerHTML='过渡效果结束';
+            this.style.background='green';
+        }
+    </script>
+</body>
+</html>

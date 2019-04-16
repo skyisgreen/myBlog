@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Touch事件的应用</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            height: 100px;
+            width: 100%;
+            display: block;
+            
+            -webkit-tap-highlight-color: red;
+            border: 10px solid black;
+            box-sizing: border-box;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <a href="#"></a>
+    <script>
+        var a =document.querySelector('a');
+        a.addEventListener('touchstart',
+        function(e)
+        {
+            console.log('touchstart');
+            console.log(e.changedTouches);
+            console.log(e.targetTouches);
+            console.log(e.touches);
+        })
+
+        a.addEventListener('touchmove',
+        function(e)
+        {
+            console.log('touchmove');
+            console.log(e.changedTouches);
+            console.log(e.targetTouches);
+            console.log(e.touches);
+        })
+
+        a.addEventListener('touchend',
+        function(e)
+        {
+            console.log('touch');
+            console.log(e.changedTouches);
+            console.log(e.targetTouches);
+            console.log(e.touches);
+        })
+    </script>
+</body>
+</html>
